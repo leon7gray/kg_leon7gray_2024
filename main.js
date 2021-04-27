@@ -1,32 +1,11 @@
-if (process.argv[2] != undefined)
-{ // check if arguments are passed from command line
-    var input = "";
-    var array = [];
-    for (var i = 2; i < process.argv.length; i++)
-    { // push the arguments into an array
-        array.push(process.argv[i]);
-    }
-    var String = convert(array);
-    console.log(String);
-    process.exit(0);
+var array = [];
+console.log(process.argv.slice(2)[0]);
+for (var i = 2; i < process.argv.length; i++)
+{ // push the arguments into an array
+    array.push(process.argv[i]);
 }
-else
-{
-    const readline = require('readline').createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    readline.question("Please enter an array of integers: ", userInput =>
-    { // prompts user to input an array of integers
-        var input = userInput;
-        var array = input.split(" ");
-        var String = convert(array);
-        
-        console.log(String);
-        readline.close()
-    });
-}
+var String = convert(array);
+console.log(String);
 
 function convert(array)
 { // convert integers into strings representing the number
