@@ -1,5 +1,4 @@
 var array = [];
-console.log(process.argv.slice(2)[0]);
 for (var i = 2; i < process.argv.length; i++)
 { // push the arguments into an array
     array.push(process.argv[i]);
